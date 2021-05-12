@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/shortenUrl");
+mongoose.connect("mongodb://localhost/shortenUrl", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 const db = mongoose.connection;
 
 db.on("error", (e) => {
