@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const exphbs = require("express-handlebars");
+const generateShortenUrl = require('./helper/helper').generateShortenUrl;
 
 const app = express();
 
@@ -10,8 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const port = 3000;
 
-app.get('/', (req, res) =>{
- res.render('index');
+app.get("/", (req, res) => {
+  console.log(generateShortenUrl())
+  res.render("index");
+});
+app.post("/", (req, res) => {
+  const { originUrl } = req.body;
+
 });
 
 app.listen(port, () => {
