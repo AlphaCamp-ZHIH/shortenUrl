@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const port = process.env.PORT||3000;
-const INDEX = process.env.INDEX;
+const INDEX = process.env.INDEX || "http://localhost:3000/";
 app.get("/", (req, res) => {
   res.render("index");
 });
