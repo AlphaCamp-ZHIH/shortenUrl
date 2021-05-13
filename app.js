@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const port = process.env.PORT||3000;
-const INDEX = "https://pacific-tundra-71654.herokuapp.com/"
+const INDEX = process.env.INDEX;
 app.get("/", (req, res) => {
   res.render("index");
 });

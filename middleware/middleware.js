@@ -1,5 +1,5 @@
 const ShortenUrl = require("../models/shortenUrl");
-const INDEX = "http://localhost:3000/"
+const INDEX = process.env.INDEX;
 
 module.exports.isOriginUrlExist = (req, res, next) => {
   const { originUrl } = req.body;
