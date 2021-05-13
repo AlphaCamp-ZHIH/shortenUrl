@@ -14,8 +14,8 @@ app.set("view engine", "hbs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-const port = 3000;
-const INDEX = "http://localhost:3000/"
+const port = process.env.PORT||3000;
+const INDEX = "https://pacific-tundra-71654.herokuapp.com/"
 app.get("/", (req, res) => {
   res.render("index");
 });
